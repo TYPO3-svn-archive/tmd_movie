@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>CSH for tmd_movie main table</description>
+        <type>CSH</type>
+        <csh_table>tx_tmdmovie</csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+
+        <languageKey index="default" type="array">
+            <label index=".description">english to follow...</label>
+        </languageKey>
+        
+        <languageKey index="de" type="array">
+            <label index=".description">Filmdatenbank</label>
+            <label index="hidden.description">Datensatz verstecken</label>
+
+
+            <label index="artikel.description">Artikel zum Film. Ist abgetrennt, weil sonst fast alle Filme unter D gelistet werden.</label>
+            <label index="title.description">Filmtitel ohne Artikel.</label>
+            <label index="short.description">Kurze Variante des Filmtitels (Umgangssprache)</label>
+			<label index="originaltitle.description">Originaltitel der Produktion wenn er vom Vertriebstitel abweicht.</label>
+            <label index="screenformat.description">Projektionsformat</label>
+            <label index="runningtime.description">Dauer des Filmes in Minuten</label>
+            <label index="rating.description">Altersfreigabe</label>
+            <label index="distributor.description">Filmverleih</label>
+            <label index="releasedate.description">Datum des Kinostart (Premierendatum)</label>
+            <label index="web.description">ofizielle Website zum Film. Mit http:// am Anfang!</label>
+            <label index="sound.description">Tonsysteme. DolbySR und DolbyDIGITAL sind bei den meisten Filmen vorhanden, deswegen schon vorausgewählt. Hier sollten alle Tonverfahren eingesetzt werden die der Film unterstützt. Was das Kino dann letztendlich eingebaut hat ist eine andere Frage.</label>
+            <label index="summary.description">Inhaltsangabe: Wenn man den Text aus WORD oder OpenOffice etc. enfügt, empfiehlt es sich folgendermaßen vorzugenen:
+            
+            1.) Text einfügen und den Datensatz abspeichern. Bereits jetzt versucht TYPO3 den Text zu bereinigen.
+            
+            2.) Jetzt eventuelle XML-Überbleibsel ganz herauslöschen.
+            
+            3.) Eventuell Umbrüche und die Formatierung überarbeiten.
+            
+            Mit dem "Pinsel" Symbol im RTE kann man noch eine bereinigung des Textes auf verschiedene Artenm versuchen. Einfach mal ausprobieren.
+            Wirklich "sauberen" Text bekommt man, wenn man den Text vorher in einen Texteditor einfügt (edit, proton nicht WordPad!).
+            </label>
+            <label index="poster.description">Bis zu 5 Plakate zum Film. Werden zufällig ausgegeben, wenn es mehrere sind. Bilder sollten eine horizontzale Auflösung von 900-1000px haben. Die Höhe ergibt sich dann von selbst. 
+            Als Format ist JPEG im guter Qualität zu empfehlen (ca. 60%-70%). Die Dateigröße darf 500kByte pro Bild nicht überschrieten.</label>
+            <label index="mediafile.description">Bis zu 5 weitere Bilder zum Film. Bilder sollten eine horizontzale Auflösung von 900-1000px haben. Die Höhe ergibt sich dann von selbst. 
+            Als Format ist JPEG im guter Qualität zu empfehlen (ca. 60%-70%). Die Dateigröße darf 500kByte pro Bild nicht überschrieten.</label>
+            <label index="fbw.description">Auszeichnung der "Filmbewertungsstelle Wiesbaden". Kann "wertvoll" oder "besonders wertvoll" sein. 
+            Hat übrigens nichts mit der inhaltlichen Qualität zu tun, betrifft eher die Art der Umsetzung.</label>
+            <label index="genre.description">Mis zu 10 Einträge.
+            Genres gibt es mehr als Filme. Am besten aus mehreren Begriffen zusammensetzte: Liebe, Komödie anstatt Liebeskomödie. So bleibt die Anzahl der Genres überschaubar.</label>
+            <label index="director.description">Name des Regisseurs. Kommaseparierte Liste.</label>
+            <label index="producer.description">Name der Produzenten. Kommaseparierte Liste.</label>
+            <label index="actor.description">Namen der Schauspieler. Kommaseparierte Liste.</label>
+            <label index="productionyear.description">Jahr der Produktion. Als Standard wird immer das aktuelle Jahr - 3 Monate vorgegeben.</label>
+            <label index="country.description">Länder die an der Produktion beteiligt waren. Kommaseparierte Liste, z.B. D,F,I. Abkürzungen vorzugsweise als ISO Code oder auch wie üblich den Autokenzeichen entsprechend.</label>
+
+        </languageKey>
+
+    </data>
+
+</T3locallang>

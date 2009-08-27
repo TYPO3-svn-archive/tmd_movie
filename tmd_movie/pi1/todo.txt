@@ -1,0 +1,14 @@
+
+Marker mit tmd_cinema abgleichen im template
+Marker-Mapping stimmt nicht!
+
+Tabellenansicht in Div's umbauen?
+-> Templates nutzen
+
+DB: Originaltitel einfügen 
+DB: Produktionsjahr / Land
+DB: Genre
+
+Verleihlogos beim adressdatensatz einbauen und im Template auswerten. selbes für Tonsysteme? title Attribut!
+
+alles in classen Packen, damit besser vo tmd_cinema referenziert werden kann

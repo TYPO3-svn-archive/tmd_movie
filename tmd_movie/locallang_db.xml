@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'tmd_movie'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_tmdmovie_movie">MovieDB</label>
+			<label index="tx_tmdmovie_movie.artikel.I.1">Der</label>
+			<label index="tx_tmdmovie_movie.artikel.I.2">Die</label>
+			<label index="tx_tmdmovie_movie.artikel.I.3">Das</label>
+			<label index="tx_tmdmovie_movie.artikel.I.4">The</label>
+			<label index="tx_tmdmovie_movie.artikel.I.5">Lé</label>
+			<label index="tx_tmdmovie_movie.artikel">Artikel</label>
+			<label index="tx_tmdmovie_movie.title">Title</label>
+			<label index="tx_tmdmovie_movie.short">Short Title</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.0">-unknown-</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.1">Widescreen 1,85:1</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.2">CinemaScope 2,35:1</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.3">Normal 4:3</label>
+			<label index="tx_tmdmovie_movie.screenformat">Screen Format</label>
+			<label index="tx_tmdmovie_movie.runningtime">Length</label>
+			<label index="tx_tmdmovie_movie.rating">Rating</label>
+			<label index="tx_tmdmovie_movie.rating_nf">nf</label>
+			<label index="tx_tmdmovie_movie.distributor">Distributor</label>
+			<label index="tx_tmdmovie_movie.releasedate">Release Date</label>
+			<label index="tx_tmdmovie_movie.web">Web address</label>
+			<label index="tx_tmdmovie_movie.sound.I.0">DolbySR</label>
+			<label index="tx_tmdmovie_movie.sound.I.1">DolbyDIGITAL</label>
+			<label index="tx_tmdmovie_movie.sound.I.2">DTS</label>
+			<label index="tx_tmdmovie_movie.sound.I.3">SDDS</label>
+			<label index="tx_tmdmovie_movie.sound.I.4">Mono</label>
+			<label index="tx_tmdmovie_movie.sound.I.5">Stereo</label>
+			<label index="tx_tmdmovie_movie.sound.I.6">DolbyDIGITAL EX</label>
+			<label index="tx_tmdmovie_movie.sound.I.7">DTS-EX</label>
+			<label index="tx_tmdmovie_movie.sound">Sound system</label>
+			<label index="tx_tmdmovie_movie.summary">Summary</label>
+			<label index="tx_tmdmovie_movie.poster">Poster (max. 5)</label>
+			<label index="tx_tmdmovie_movie.mediafile">Media Files (max. 5)</label>
+			<label index="tx_tmdmovie_movie.fbw.I.1">wertvoll</label>
+			<label index="tx_tmdmovie_movie.fbw.I.2">besonders wervoll</label>
+			<label index="tx_tmdmovie_movie.fbw">FBW</label>
+			<label index="tx_tmdmovie_movie.genre">Genre</label>
+			<label index="tx_tmdmovie_movie.director">Director</label>
+			<label index="tx_tmdmovie_movie.producer">Producer</label>
+			<label index="tx_tmdmovie_movie.actor">Actors</label>
+			<label index="tx_tmdmovie_movie.originaltitle">Original Title</label>
+			<label index="tx_tmdmovie_movie.productionyear">Year of Production</label>
+			<label index="tx_tmdmovie_movie.country">Production Country (CSV)</label>
+			<label index="tx_tmdmovie_rating">Movie: Rating</label>
+			<label index="tx_tmdmovie_rating.rating">Rating</label>
+			<label index="tx_tmdmovie_rating.tooltip">Tooltip</label>
+			<label index="tx_tmdmovie_genre">Movie: Genre</label>
+			<label index="tx_tmdmovie_genre.genre">genre</label>
+			<label index="tt_content.list_type_pi1">Cinema Movie</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_tmdmovie_movie">Film: Neuer Film</label>
+			<label index="tx_tmdmovie_movie.artikel">Artikel</label>
+			<label index="tx_tmdmovie_movie.title">Titel</label>
+			<label index="tx_tmdmovie_movie.short">Kurztitel</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.0">-unbekannt-</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.1">Breitwand 1,85:1</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.2">CinemaScope 2,35:1</label>
+			<label index="tx_tmdmovie_movie.screenformat.I.3">Normal 4:3</label>
+			<label index="tx_tmdmovie_movie.screenformat">Bildformat</label>
+			<label index="tx_tmdmovie_movie.runningtime">Länge</label>
+			<label index="tx_tmdmovie_movie.rating">FSK</label>
+			<label index="tx_tmdmovie_movie.rating_nf">nicht feiertagsfrei!</label>
+			<label index="tx_tmdmovie_movie.distributor">Verleih</label>
+			<label index="tx_tmdmovie_movie.releasedate">Bundesstart</label>
+			<label index="tx_tmdmovie_movie.web">Internet Adresse</label>
+			<label index="tx_tmdmovie_movie.sound">Tonsystem</label>
+			<label index="tx_tmdmovie_movie.summary">Inhaltsangabe</label>
+			<label index="tx_tmdmovie_movie.poster">Plakat (max. 5)</label>
+			<label index="tx_tmdmovie_movie.mediafile">Zusatzumaterial (max. 5)</label>
+			<label index="tx_tmdmovie_movie.fbw.I.1">wertvoll</label>
+			<label index="tx_tmdmovie_movie.genre">Genre</label>
+			<label index="tx_tmdmovie_movie.director">Regie</label>
+			<label index="tx_tmdmovie_movie.producer">Produzent</label>
+			<label index="tx_tmdmovie_movie.actor">Besetzung</label>
+			<label index="tx_tmdmovie_movie.originaltitle">Originaltitel</label>
+			<label index="tx_tmdmovie_movie.productionyear">Produktionsjahr</label>
+			<label index="tx_tmdmovie_movie.country">Produktions Land (CSV)</label>
+			<label index="tx_tmdmovie_rating">Film: FSK</label>
+			<label index="tx_tmdmovie_rating.rating">FSK</label>
+			<label index="tx_tmdmovie_rating.tooltip">Tooltip</label>
+			<label index="tx_tmdmovie_rating.ratinklink">Beschreibung</label>
+			<label index="tx_tmdmovie_genre">Movie: Genre</label>
+			<label index="tx_tmdmovie_genre.genre">Genre</label>
+			<label index="tt_content.list_type_pi1">Kino Film</label>
+		</languageKey>
+	</data>
+</T3locallang>

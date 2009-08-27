@@ -1,0 +1,95 @@
+
+
+plugin.tx_tmdmovie_pi1 {
+	imageW.list = 80
+	imageW.single = 200
+
+	strftime = %d.%m.%Y 
+		
+	fbw.0 = wertvoll
+	fbw.1 = besonders wertvoll
+
+	artikel.0 = 
+	artikel.1 = Der
+	artikel.2 = Die
+	artikel.3 = Das
+	artikel.4 = The
+	artikel.5 = Lé
+	
+	template = EXT:tmd_movie/pi1/res/template.html
+
+	dummyPoster = EXT:tmd_movie/pi1/res/dummy.jpg
+	
+		# Die  Mediafiles separat behandeln
+	media.file.width = 100
+	media.imageLinkWrap = 1
+	media.imageLinkWrap {
+		enable = 1
+		bodyTag = <body style="margin:0;background-color:black">
+		JSwindow = 1
+		JSwindow.newWindow = 1
+		JSwindow.expand = 20,20
+		bodyTag = <body bgcolor="black">
+		wrap = <a href="javascript:close();"> | </a>
+		width = 600m
+		}
+	}
+
+plugin.tx_tmdmovie_pi1.listView {
+	results_at_a_time = 10
+	maxPages = 8
+	pagefloat = CENTER
+	showRange = TRUE
+	dontLinkActivePage = 1
+	
+	# if this is set, two links named "<< First" and "LAST >>" will be shown and point to the very first or last page.
+	showFirstLast = 1
+	
+	}
+
+plugin.tx_tmdmovie_pi1.wrap {
+	listView {
+		TITLE = <h2>|</h2>
+		ORIGINALTITLE = (|)<br />
+		SHORTTITLE = |<br />
+		SCREENFORMAT = |<br />
+		RUNNINGTIME = |min.<br />
+		RATING = |<br />
+		DISTRIBUTOR = |<br />
+		RELEASEDATE = |<br />
+		WEB = |<br />
+		SOUND = |<br />
+		SUMMARY = |
+		SUMMARY_SHORT = |
+		SUMMARY_SHORT.stdWrap.crop = 300 | ... | 1
+		POSTER = |
+		FBW = |<br />
+		GENRE = |<br />
+		DIRECTOR = |<br />
+		PRODUCER = |<br />
+		ACTOR = |<br />
+		}
+
+	singleView {
+		TITLE = <h1>|</h1>
+		ORIGINALTITLE = (|)<br />
+		SHORTTITLE = |<br />
+		SCREENFORMAT = |<br />
+		RUNNINGTIME = ca. |min<br />
+		RATING = |<br />
+		DISTRIBUTOR = Im Verleih von&nbsp;|<br />
+		RELEASEDATE = Kinostart:&nbsp;|<br />
+		WEB = |<br />
+		SOUND = |<br />
+		SUMMARY = |
+		SUMMARY_SHORT = |
+		SUMMARY_SHORT.stdWrap.crop = 300 | ... | 1
+		POSTER = |
+		FBW = |<br />
+		GENRE = Genre:&nbsp;|<br />
+		DIRECTOR = |<br />
+		PRODUCER = |<br />
+		ACTOR = |<br />
+		}
+
+	}

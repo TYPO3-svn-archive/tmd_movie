@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>tmd_movie langiuage</description>
+        <type></type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="listFieldHeader_title">Title</label>
+            <label index="listFieldHeader_short">Short Title</label>
+            <label index="listFieldHeader_screenformat">Screen Format</label>
+            <label index="listFieldHeader_runningtime">Runningtime</label>
+            <label index="listFieldHeader_rating">Rating</label>
+            <label index="listFieldHeader_distributor">Distributor</label>
+            <label index="listFieldHeader_releasedate">Release Date</label>
+            <label index="listFieldHeader_web">Web address</label>
+            <label index="listFieldHeader_sound">Sound system</label>
+            <label index="listFieldHeader_summary">Summary</label>
+            <label index="listFieldHeader_poster">Poster</label>
+            <label index="listFieldHeader_mediafile">Media Files</label>
+            <label index="listFieldHeader_fbw">FBW</label>
+            <label index="listFieldHeader_originaltitle">Original Titel</label>
+            <label index="abc_All">All Movies</label>
+            <label index="list_mode_1">Mode 1</label>
+            <label index="list_mode_2">Mode 2</label>
+            <label index="list_mode_3">Mode 3</label>
+            <label index="back">Back</label>
+            <label index="pi_list_browseresults_prev">&lt; Previous</label>
+            <label index="pi_list_browseresults_page">Page</label>
+            <label index="pi_list_browseresults_next">Next &gt;</label>
+            <label index="pi_list_browseresults_displays">Displaying results ###SPAN_BEGIN###%s to %s&lt;/span&gt; out of ###SPAN_BEGIN###%s&lt;/span&gt;</label>
+            <label index="pi_list_searchBox_search">Search</label>
+            <label index="noPic">No Picture</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="listFieldHeader_title">Titel</label>
+            <label index="listFieldHeader_short">Kurztitel</label>
+            <label index="listFieldHeader_screenformat">Bildformat</label>
+            <label index="listFieldHeader_runningtime">Spieldauer</label>
+            <label index="listFieldHeader_rating">FSK</label>
+            <label index="listFieldHeader_distributor">Verleih</label>
+            <label index="listFieldHeader_releasedate">Bundesstart</label>
+            <label index="listFieldHeader_web">Internet</label>
+            <label index="listFieldHeader_sound">Ton Systeme</label>
+            <label index="listFieldHeader_summary">Inhalt</label>
+            <label index="listFieldHeader_poster">Poster</label>
+            <label index="listFieldHeader_mediafile">Media Files</label>
+            <label index="listFieldHeader_fbw">FBW</label>
+            <label index="listFieldHeader_originaltitle">Originaltitel</label>
+            <label index="abc_All">Alle Filme</label>
+            <label index="abc_latest">Neu</label>
+            <label index="list_mode_1">Mode 1</label>
+            <label index="list_mode_2">Mode 2</label>
+            <label index="list_mode_3">Mode 3</label>
+            <label index="back">Zurück</label>
+            <label index="pi_list_browseresults_prev">&lt; Zurück</label>
+            <label index="pi_list_browseresults_page">Seite</label>
+            <label index="pi_list_browseresults_next">Weiter &gt;</label>
+            <label index="pi_list_browseresults_displays">Ergebnisse ###SPAN_BEGIN###%s bis %s&lt;/span&gt; von ###SPAN_BEGIN###%s&lt;/span&gt;</label>
+            <label index="pi_list_searchBox_search">Suchen</label>
+            <label index="noPic">kein Plakat verfügbar</label>
+        </languageKey>
+    </data>
+</T3locallang>

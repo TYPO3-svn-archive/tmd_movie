@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<T3DataStructure>
+<sheets>
+	<s_DEF>
+		<ROOT>
+			<type>array</type>
+			<el>
+				<mode>
+					<TCEforms>
+					<label>Modus</label>
+						
+					<config>
+						<type>select</type>
+						<items>
+							<numIndex index="0">
+								<numIndex index="0">Filmarchiv</numIndex>
+								<numIndex index="1">movieArchive</numIndex>
+							</numIndex>
+							
+							<numIndex index="1">
+								<numIndex index="0">AMAZON links</numIndex>
+								<numIndex index="1">amazon</numIndex>
+							</numIndex>
+
+						</items>
+					</config>
+				</TCEforms>
+				</mode>
+				
+			</el>
+		</ROOT>
+	</s_DEF>
+	
+	<s_amazon>
+		<ROOT>
+			<type>array</type>
+			<el>
+				<width>
+				<TCEforms>
+					<label>max width</label>
+					<config>
+						<type>input</type>
+						<size>5</size>
+						<eval>int</eval>
+						<default>80</default>
+					</config>
+				</TCEforms>
+				</width>
+				
+				<colums>
+				<TCEforms>
+					<label>max images per colum</label>
+					<config>
+						<type>input</type>
+						<size>5</size>
+						<eval>int</eval>
+						<default>4</default>
+						<range><lower>1</lower></range>
+					</config>
+				</TCEforms>
+				</colums>
+				
+				<clickEnlarge>
+				<TCEforms>
+					<label>Klick Enlarge?</label>
+					<config>
+						<type>check</type>
+					</config>
+				</TCEforms>
+				</clickEnlarge>
+			</el>
+		</ROOT>
+	</s_amazon>
+	
+	
+</sheets>
+</T3DataStructure>
+

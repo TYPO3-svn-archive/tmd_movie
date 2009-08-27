@@ -1,0 +1,3 @@
+20.11.06	Eingedeutscht.
+			Statisches TS
+			Artikel und FBW via TS konfiguriert
