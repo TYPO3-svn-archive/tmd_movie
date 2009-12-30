@@ -24,7 +24,7 @@ $TCA["tx_tmdmovie_movie"] = array (
             'fe_group' => 'fe_group',
         ),
         'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-        'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_tmdmovie_movie.gif',
+        'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_tmdmovie_movie.png',
     ),
     "feInterface" => array (
 		"fe_admin_fieldList" => "hidden, starttime, endtime, fe_group, artikel, title, short, screenformat, runningtime, rating, rating_nf, distributor, releasedate, web, sound, summary, poster, mediafile, fbw, genre, director, producer, actor, originaltitle, productionyear, country",

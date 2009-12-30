@@ -400,7 +400,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
         							--div--;Technik, runningtime, rating, fbw, releasedate, screenformat, distributor, web, sound,
         							--div--;Inhalt,summary;;;richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_tmdmovie/rte/],
         							--div--;Medien,poster, mediafile,
-        							--div--;Pruduktion,genre, director, producer, actor,productionyear, country,
+        							--div--;Produktion,genre, director, producer, actor,productionyear, country,
 									")
     ),
 
