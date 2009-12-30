@@ -37,7 +37,7 @@ $BE_USER->modAccess($MCONF,1);	// This checks permissions and exits if the users
 
 
 /**
- * Module 'Film Informations' for the 'tmd_cinema' extension.
+ * Module 'Film Informations' for the 'tmd_movie' extension.
  *
  * @author	Christian Tauscher <cms@media-distillery.de>
  * @package	TYPO3
@@ -75,11 +75,7 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 		$access = is_array($this->pageinfo) ? 1 : 0;
 
 		if (($this->id && $access) || ($BE_USER->user['admin'] && !$this->id))	{
-			$this->cinemaOrder = t3lib_BEfunc::getModTSconfig($this->id, 'mod.'.$GLOBALS['MCONF']['name'].'.cinemaOrder');
-			$this->cinemaOrder = $this->cinemaOrder['value'];
-#t3lib_div::devLog('Nachricht', 'tmd_cinema', 0, (array)$this->cinemaOrder);
-
-				// Draw the header.
+ 				// Draw the header.
 			$this->doc = t3lib_div::makeInstance('bigDoc');
 			$this->doc->backPath = $BACK_PATH;
 			$this->doc->form='<form action="" method="POST">';

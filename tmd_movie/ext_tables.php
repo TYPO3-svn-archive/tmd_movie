@@ -91,5 +91,9 @@ t3lib_extMgm::addPiFlexFormValue($_EXTKEY.'_pi1', 'FILE:EXT:'.$_EXTKEY.'/flexfor
 t3lib_extMgm::addPlugin(Array("LLL:EXT:tmd_movie/locallang_db.php:tt_content.list_type_pi1", $_EXTKEY."_pi1"),"list_type");
 t3lib_extMgm::addStaticFile($_EXTKEY,"pi1/static/","Cinema Movie");
 
+if (TYPO3_MODE == 'BE')    {
+    t3lib_extMgm::addModule('web','txtmdmovieM1','',t3lib_extMgm::extPath($_EXTKEY).'mod1/');
+}
+
 
 ?>
