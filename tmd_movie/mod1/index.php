@@ -170,9 +170,11 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 		
 		$this->MOD_MENU = Array (
 			'function' => Array (
+				'0' => $LANG->getLL('search'),
 				'5' => $LANG->getLL('function5'), # Bundesstart
 				'6' => $LANG->getLL('function6'), # Neueste Filme
 				'7' => $LANG->getLL('function7'), # Filme dieser Site
+				'1' => $LANG->getLL('function1'), # Versteckte Filme
 				),
 			);
 
@@ -189,6 +191,15 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 	function moduleContent()	{
 		
 		switch((string)$this->MOD_SETTINGS['function'])	{
+			case 0:
+				$content= $this->search();
+				$this->content.=$this->doc->section('Suche',$content,0,1);
+			break;
+			case 1: # versteckte Filme
+				$where = 'hidden = 1';
+				$content= $this->listSelectedMovies('releasedate ASC', $where);
+				$this->content.=$this->doc->section('kommende Bundesstart',$content,0,1);
+			break;
 			case 5: # Start Zukunft
 				$where = 'releasedate > '.mktime();
 				$content= $this->listSelectedMovies('releasedate ASC', $where);
@@ -204,7 +215,7 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 				$content= $this->listSelectedMovies('title ASC', $where);
 				$this->content.=$this->doc->section('Filme dieser Seite:',$content,0,1);
 			break;
-			
+
 			case 'error': # dieser Seite
 				$content=  "";
 				$this->content.=$this->doc->section('ERROR:',$content,0,1);
@@ -306,14 +317,6 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 
 
 	
-	
-	
-	
-
-			
-			
-	
-	
 
 
 	
@@ -348,7 +351,11 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 				return $this->rating[$this->row[$fN]];
 			break;
 			case 'releasedate':
-				return strftime('%d.%m.%y', $this->row[$fN]);
+				if($this->row[$fN]) {
+					return strftime('%d.%m.%y', $this->row[$fN]);
+				} else {
+					return "Startdatum unbekannt";
+				}
 			break;
 			case 'distributor':
 				if(!$this->distributorCache[$this->row[$fN]]) {
@@ -427,14 +434,47 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 				
 				return implode(", ", $genre);
 			break;	
-			
+			case 'runningtime':
+				return $this->row[$fN]." min.";
+			break; 
 			default:
 				return $this->row[$fN];
 		}
 	}
 
 	
-
+	
+	
+	
+			/**
+			 * Suchen von Daten
+			 */
+		function search() {
+			GLOBAL $LANG;
+			
+			$out = ' 
+				<form name="searchForm" action="" method="get">
+				<fieldset>
+					<legend>'.$LANG->getLL('searchWhere').'</legend> 
+						<input type="input" name="search" value="'.t3lib_div::GPvar("search").'" size="40" tabindex="1" /><br /> <!-- onfocus="this.value=\'\'" -->
+				<input type="submit" value="Suchen" tabindex="36" />
+				</fieldset>
+				</form>
+				
+				';
+			
+			if(t3lib_div::GPvar("search"))
+				{
+				$fields = array(title,short,originaltitle);
+				$words = explode(" ", t3lib_div::GPvar("search"));
+				$where = $GLOBALS['TYPO3_DB']->searchQuery($words, $fields, "tx_tmdmovie_movie");
+		
+				$out .= $this->listSelectedMovies($sorting='crdate DESC', $where, $count=20);
+				}
+			
+			return $out;
+			}
+	
 	
 			
 } /* END of class */

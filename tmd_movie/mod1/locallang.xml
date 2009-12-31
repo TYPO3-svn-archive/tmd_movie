@@ -7,19 +7,30 @@
 	<data type="array">
 
 		<languageKey index="default" type="array">
-			<label index="title">Film Informations</label>
+			<label index="title">Movie Informations</label>
+
+			<label index="search">Search</label>
+			<label index="function1">Hidden Movies</label>
 			<label index="function5">Upcoming releases</label>
 			<label index="function6">lately created Movies</label>
 			<label index="function7">Filme dieser Site</label>
 			<label index="deleteWarning">Delete this record?</label>
+			
+			<label index="searchWhere">Search in Title / Short / Original-Title</label>
 		</languageKey>
 
 		<languageKey index="de" type="array">
 			<label index="title">Film Übersicht</label>
+			
+			<label index="search">Suche</label>
+			<label index="function1">versteckte Filme</label>
 			<label index="function5">Kommende Bundesstart</label>
 			<label index="function6">Neu angelegte Filme</label>
 			<label index="function7">Filme dieser Site</label>
 			<label index="deleteWarning">Diesen Film wirklich löschen?</label>
+			
+			<label index="searchWhere">Suche über den Titel / Kurztitel / Original-Titel</label>
+			 
 		</languageKey>
 		
 	</data>
