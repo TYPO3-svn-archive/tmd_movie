@@ -5,6 +5,7 @@
 		<description>Language labels for database tables/fields belonging to extension 'tmd_movie'</description>
 	</meta>
 	<data type="array">
+	
 		<languageKey index="default" type="array">
 			<label index="tx_tmdmovie_movie">MovieDB</label>
 			<label index="tx_tmdmovie_movie.artikel.I.1">Der</label>
@@ -53,8 +54,11 @@
 			<label index="tx_tmdmovie_rating.tooltip">Tooltip</label>
 			<label index="tx_tmdmovie_genre">Movie: Genre</label>
 			<label index="tx_tmdmovie_genre.genre">genre</label>
+			<label index="tx_tmdmovie_movie.3d">This movie is 3D ONLY</label>
+			
 			<label index="tt_content.list_type_pi1">Cinema Movie</label>
 		</languageKey>
+		
 		<languageKey index="de" type="array">
 			<label index="tx_tmdmovie_movie">Film: Neuer Film</label>
 			<label index="tx_tmdmovie_movie.artikel">Artikel</label>
@@ -89,7 +93,10 @@
 			<label index="tx_tmdmovie_rating.ratinklink">Beschreibung</label>
 			<label index="tx_tmdmovie_genre">Movie: Genre</label>
 			<label index="tx_tmdmovie_genre.genre">Genre</label>
+			<label index="tx_tmdmovie_movie.3d">Diesen Film gibt es nur in einer 3D Version</label>
+			
 			<label index="tt_content.list_type_pi1">Kino Film</label>
 		</languageKey>
+		
 	</data>
 </T3locallang>

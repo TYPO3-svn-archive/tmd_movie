@@ -231,13 +231,13 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 		$out = $this->cObj->substituteMarker($out, '###DIRECTOR###', 	$this->getFieldContent('director'));
 		$out = $this->cObj->substituteMarker($out, '###PRODUCER###', 	$this->getFieldContent('producer'));
 		$out = $this->cObj->substituteMarker($out, '###ACTOR###', 		$this->getFieldContent('actor'));
+		$out = $this->cObj->substituteMarker($out, '###VERSION_3D###', 	$this->getFieldContent('version3D'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_1###',		$this->getFieldContent('movie_media-1'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_2###',		$this->getFieldContent('movie_media-2'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_3###',		$this->getFieldContent('movie_media-3'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_4###',		$this->getFieldContent('movie_media-4'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_5###',		$this->getFieldContent('movie_media-5'));
-
-
+				
 		$out = $this->cObj->substituteMarker($out, '###SORT_TITLE###', 			$this->getFieldHeader_sortLink('title'));
 		$out = $this->cObj->substituteMarker($out, '###SORT_ORIGINALTITLE###', 	$this->getFieldHeader_sortLink('originaltitle'));
 		$out = $this->cObj->substituteMarker($out, '###SORT_SCREENFORMAT###', 	$this->getFieldHeader_sortLink('screenformat'));
@@ -373,6 +373,14 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 						return $out;
 						}
 			break;
+			case "version3D":
+				$out = $this->internal["currentRow"]["version3D"];
+				if($out)
+						{
+						$out = $this->cObj->wrap($out, $this->conf['wrap.'][$type]['3D']);
+						return $out;
+						}
+			break;
 			case "distributor":
 				$field = $this->internal["currentRow"]["distributor"];
 
@@ -381,7 +389,6 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 					$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery("name","tt_address","uid=".$field);
 					$erg = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 					$this->distribCache[$field] = $erg[name];
-#					debug($this->distribCache);
 					}
 
 				$out = $this->cObj->wrap($out, $this->distribCache[$field]);
@@ -417,27 +424,22 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 
 			break;
 			case 'poster':
-				if($this->piVars['showUid'] || $this->conf['CMD'] == "singleView")
-					{
+				if($this->piVars['showUid'] || $this->conf['CMD'] == "singleView") {
 					$this->conf['image.']['file.']['width'] = $this->conf['imageW.']['single'];
-					}
-				else
-					{
+				} else {
 					$this->conf['image.']['file.']['width'] = $this->conf['imageW.']['list'];
-					}
+				}
 
-				if($this->internal["currentRow"]['poster'])
-					{
+				if($this->internal["currentRow"]['poster']) {
 					$temp = explode(',', $this->internal["currentRow"]['poster']); # mehrere Poster?
 					$this->conf['image.']['file'] = $this->uploadPath.$temp[rand(0,count($temp)-1)];
-					}
-				else
-					{
+				} else {
 					$this->conf['image.']['file'] = $this->uploadPath.$this->getFieldContent('movie_media-random');
-					}
+				}
 
-				if($this->conf['image.']['file'] == $this->uploadPath)
+				if($this->conf['image.']['file'] == $this->uploadPath) {
 					$this->conf['image.']['file'] = $this->conf['dummyPoster']; # dummy
+				}
 
 				$this->conf['image.']['altText'] = $this->internal["currentRow"]['title'];
 				$out = $this->cObj->IMAGE($this->conf['image.']);

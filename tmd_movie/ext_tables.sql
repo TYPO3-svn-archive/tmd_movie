@@ -28,6 +28,7 @@ CREATE TABLE tx_tmdmovie_movie (
     mediafile blob NOT NULL,
     fbw int(11) DEFAULT '0' NOT NULL,
     genre blob NOT NULL,
+	3d tinyint(3) DEFAULT '0' NOT NULL,
     director text NOT NULL,
     producer text NOT NULL,
     actor text NOT NULL,

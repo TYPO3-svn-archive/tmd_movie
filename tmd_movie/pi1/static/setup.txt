@@ -18,7 +18,7 @@ plugin.tx_tmdmovie_pi1 {
 	
 	template = EXT:tmd_movie/pi1/res/template.html
 
-	dummyPoster = EXT:tmd_movie/pi1/res/dummy.jpg
+	dummyPoster = EXT:tmd_movie/pi1/res/dummy.png
 	
 		# Die  Mediafiles separat behandeln
 	media.file.width = 100
@@ -44,7 +44,6 @@ plugin.tx_tmdmovie_pi1.listView {
 	
 	# if this is set, two links named "<< First" and "LAST >>" will be shown and point to the very first or last page.
 	showFirstLast = 1
-	
 	}
 
 plugin.tx_tmdmovie_pi1.wrap {
@@ -68,6 +67,7 @@ plugin.tx_tmdmovie_pi1.wrap {
 		DIRECTOR = |<br />
 		PRODUCER = |<br />
 		ACTOR = |<br />
+		3D = <span style="color: red;">3D</span><br />
 		}
 
 	singleView {
@@ -90,6 +90,7 @@ plugin.tx_tmdmovie_pi1.wrap {
 		DIRECTOR = |<br />
 		PRODUCER = |<br />
 		ACTOR = |<br />
+		3D = <span style="color: red;">3D</span><br />
 		}
 
 	}

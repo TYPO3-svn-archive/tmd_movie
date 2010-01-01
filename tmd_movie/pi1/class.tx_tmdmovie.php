@@ -51,7 +51,7 @@ class tx_tmdmovie extends tslib_pibase {
 	var $director;
 	var $producer;
 	var $actor;
-
+	var $version3D;
 
 /*
 	function getMovieList($where, $group='', $sort='')
@@ -186,7 +186,9 @@ class tx_tmdmovie extends tslib_pibase {
 		// Original Titel
 		$this->short = $this->movie["short"];
 
-
+		// 3d Verion 
+		$this->version3D = $this->movie["3d"];
+		
 				
 		// Safe cleanup
 		unset($this->movie);
@@ -217,6 +219,7 @@ class tx_tmdmovie extends tslib_pibase {
 					"director" => $this->director,
 					"producer" => $this->producer,
 					"actor" => $this->actor,
+					"3d" => $this->version3D,
 					),
 				"Film"
 				);

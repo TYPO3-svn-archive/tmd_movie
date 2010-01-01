@@ -40,6 +40,7 @@
             Mit dem "Pinsel" Symbol im RTE kann man noch eine bereinigung des Textes auf verschiedene Artenm versuchen. Einfach mal ausprobieren.
             Wirklich "sauberen" Text bekommt man, wenn man den Text vorher in einen Texteditor einfügt (edit, proton nicht WordPad!).
             </label>
+			<label index="3d.description">Diese Checkbox nur wählen wenn es den Film AUSSCHLIESSLICH als 3D Version gibt. (Kino-Verwaltung: 3D kann auch für eine Vorstellung explizit gewählt werden).</label>
             <label index="poster.description">Bis zu 5 Plakate zum Film. Werden zufällig ausgegeben, wenn es mehrere sind. Bilder sollten eine horizontzale Auflösung von 900-1000px haben. Die Höhe ergibt sich dann von selbst. 
             Als Format ist JPEG im guter Qualität zu empfehlen (ca. 60%-70%). Die Dateigröße darf 500kByte pro Bild nicht überschrieten.</label>
             <label index="mediafile.description">Bis zu 5 weitere Bilder zum Film. Bilder sollten eine horizontzale Auflösung von 900-1000px haben. Die Höhe ergibt sich dann von selbst. 
@@ -52,7 +53,7 @@
             <label index="producer.description">Name der Produzenten. Kommaseparierte Liste.</label>
             <label index="actor.description">Namen der Schauspieler. Kommaseparierte Liste.</label>
             <label index="productionyear.description">Jahr der Produktion. Als Standard wird immer das aktuelle Jahr - 3 Monate vorgegeben.</label>
-            <label index="country.description">Länder die an der Produktion beteiligt waren. Kommaseparierte Liste, z.B. D,F,I. Abkürzungen vorzugsweise als ISO Code oder auch wie üblich den Autokenzeichen entsprechend.</label>
+            <label index="country.description">Länder die an der Produktion beteiligt waren. Kommaseparierte Liste, z.B. D,F,I. Abkürzungen den üblich den Autokenzeichen entsprechend.</label>
 
         </languageKey>
 

@@ -4,7 +4,7 @@ if (!defined ("TYPO3_MODE")) 	die ("Access denied.");
 $TCA["tx_tmdmovie_movie"] = Array (
 	"ctrl" => $TCA["tx_tmdmovie_movie"]["ctrl"],
 	"interface" => Array (
-		"showRecordFieldList" => "hidden,starttime,endtime,fe_group,artikel,title,short,screenformat,runningtime,rating,distributor,releasedate,web,sound,summary,poster,mediafile,fbw,genre,director,producer,actor,originaltitle,productionyear,country"
+		"showRecordFieldList" => "hidden,starttime,endtime,fe_group,artikel,title,short,screenformat,runningtime,rating,distributor,releasedate,web,sound,summary,poster,mediafile,fbw,genre,director,producer,actor,originaltitle,productionyear,country.3d"
 	),
 	"feInterface" => $TCA["tx_tmdmovie_movie"]["feInterface"],
 	"columns" => Array (
@@ -98,10 +98,10 @@ $TCA["tx_tmdmovie_movie"] = Array (
 			"config" => Array (
 				"type" => "select",
 				"items" => Array (
-					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.0", "0", t3lib_extMgm::extRelPath("tmd_movie")."selicon_tx_tmdmovie_movie_screenformat_0.gif"),
-					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.1", "1", t3lib_extMgm::extRelPath("tmd_movie")."selicon_tx_tmdmovie_movie_screenformat_1.gif"),
-					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.2", "2", t3lib_extMgm::extRelPath("tmd_movie")."selicon_tx_tmdmovie_movie_screenformat_2.gif"),
-					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.3", "3", t3lib_extMgm::extRelPath("tmd_movie")."selicon_tx_tmdmovie_movie_screenformat_3.gif"),
+					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.0", "0", t3lib_extMgm::extRelPath("tmd_movie")."selection_default.png"),
+					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.1", "1", t3lib_extMgm::extRelPath("tmd_movie")."selection_breitwand.png"),
+					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.2", "2", t3lib_extMgm::extRelPath("tmd_movie")."selection_cinemascope.png"),
+					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.screenformat.I.3", "3", t3lib_extMgm::extRelPath("tmd_movie")."selection_normal.png"),
 				),
 				"size" => 1,	
 				"maxitems" => 1,
@@ -237,11 +237,18 @@ $TCA["tx_tmdmovie_movie"] = Array (
 				"max_size" => 500,	
 				"uploadfolder" => "uploads/tx_tmdmovie",
 				"show_thumbs" => 1,	
-				"size" => 2,	
+				"size" => 5,	
 				"minitems" => 0,
 				"maxitems" => 5,
 			)
 		),
+		"3d" => Array (        
+            "exclude" => 1,        
+            "label" => "LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.3d",        
+            "config" => Array (
+                "type" => "check",
+            )
+        ),
 		"mediafile" => Array (		
 			"exclude" => 1,		
 			"label" => "LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.mediafile",		
@@ -252,7 +259,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
 				"max_size" => 500,	
 				"uploadfolder" => "uploads/tx_tmdmovie",
 				"show_thumbs" => 1,	
-				"size" => 3,	
+				"size" => 5,	
 				"minitems" => 0,
 				"maxitems" => 5,
 			)
@@ -397,7 +404,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
     "types" => array (
         "0" => array("showitem" => "
         							--div--;Titel,hidden;;1;;1-1-1, artikel;;;;2-2-2, title, short, originaltitle,
-        							--div--;Technik, runningtime, rating, fbw, releasedate, screenformat, distributor, web, sound,
+        							--div--;Technik, runningtime, rating, fbw, releasedate, screenformat, 3d, distributor, web, sound,
         							--div--;Inhalt,summary;;;richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_tmdmovie/rte/],
         							--div--;Medien,poster, mediafile,
         							--div--;Produktion,genre, director, producer, actor,productionyear, country,
