@@ -17,7 +17,7 @@
 			<label index="deleteWarning">Delete this record?</label>
 			
 			<label index="searchWhere">Search in Title / Short / Original-Title</label>
-			<label index="3d">3D ONLY!!!</label>
+			<label index="version3d">3D ONLY!!!</label>
 			
 		</languageKey>
 
@@ -32,7 +32,7 @@
 			<label index="deleteWarning">Diesen Film wirklich löschen?</label>
 			
 			<label index="searchWhere">Suche über den Titel / Kurztitel / Original-Titel</label>
-			<label index="3d">NUR 3D!!!</label>
+			<label index="version3d">NUR 3D!!!</label>
 						 
 		</languageKey>
 		

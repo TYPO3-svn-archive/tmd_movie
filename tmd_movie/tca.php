@@ -4,7 +4,7 @@ if (!defined ("TYPO3_MODE")) 	die ("Access denied.");
 $TCA["tx_tmdmovie_movie"] = Array (
 	"ctrl" => $TCA["tx_tmdmovie_movie"]["ctrl"],
 	"interface" => Array (
-		"showRecordFieldList" => "hidden,starttime,endtime,fe_group,artikel,title,short,screenformat,runningtime,rating,distributor,releasedate,web,sound,summary,poster,mediafile,fbw,genre,director,producer,actor,originaltitle,productionyear,country.3d"
+		"showRecordFieldList" => "hidden,starttime,endtime,fe_group,artikel,title,short,screenformat,runningtime,rating,distributor,releasedate,web,sound,summary,poster,mediafile,fbw,genre,director,producer,actor,originaltitle,productionyear,country. "
 	),
 	"feInterface" => $TCA["tx_tmdmovie_movie"]["feInterface"],
 	"columns" => Array (
@@ -138,7 +138,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
 				"maxitems" => 1,
 			)
 		),
-		"distributor" => Array (        
+		"distributor" => Array (
             "exclude" => 1,        
             "label" => "LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.distributor",        
             "config" => Array (
@@ -202,9 +202,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
 					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.sound.I.5", ""),
 					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.sound.I.6", ""),
 					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.sound.I.7", ""),
-/*					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.sound.I.8", ""),
-					Array("LLL:EXT:tmd_movie/locallang_db.php:tx_tmdmovie_movie.sound.I.9", ""),
-*/				),
+				),
 			)
 		),
 		"summary" => Array (		
@@ -220,7 +218,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
 						"notNewRecords" => 1,
 						"RTEonly" => 1,
 						"type" => "script",
-						"title" => "Full screen Rich Text Editing|Formatteret redigering i hele vinduet",
+						"title" => "Full screen Rich Text Editing|RTE nimmt den ganzen Bildschirm ein",
 						"icon" => "wizard_rte2.gif",
 						"script" => "wizard_rte.php",
 					),
@@ -242,9 +240,9 @@ $TCA["tx_tmdmovie_movie"] = Array (
 				"maxitems" => 5,
 			)
 		),
-		"3d" => Array (        
+		"version3d" => Array (        
             "exclude" => 1,        
-            "label" => "LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.3d",        
+            "label" => "LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.version3d",        
             "config" => Array (
                 "type" => "check",
             )
@@ -390,25 +388,15 @@ $TCA["tx_tmdmovie_movie"] = Array (
 
         
     ),
-/*
-    "types" => array (
-        "0" => array("showitem" => "hidden;;1;;1-1-1,
-        							artikel, title, short, originaltitle;;;;2-2-2,
-        							screenformat, runningtime, rating, distributor, releasedate, web, sound;;;;3-3-3,
-        							summary;;;richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_tmdmovie/rte/];;;;4-4-4,
-        							poster, mediafile;;;;5-5-5,
-        							fbw, genre, director, producer, actor,productionyear, country;;;;6-6-6")
-    ),
-    ;;;;3-3-3
-*/
+
     "types" => array (
         "0" => array("showitem" => "
-        							--div--;Titel,hidden;;1;;1-1-1, artikel;;;;2-2-2, title, short, originaltitle,
-        							--div--;Technik, runningtime, rating, fbw, releasedate, screenformat, 3d, distributor, web, sound,
-        							--div--;Inhalt,summary;;;richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_tmdmovie/rte/],
-        							--div--;Medien,poster, mediafile,
-        							--div--;Produktion,genre, director, producer, actor,productionyear, country,
-									")
+        	--div--;LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.flexTitle,			hidden;;1;;1-1-1, artikel;;;;2-2-2, title, short, originaltitle,
+        	--div--;LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.flexInfo, 			runningtime, rating, fbw, releasedate, screenformat, version3d, distributor, web, sound,
+        	--div--;LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.flexSummary,		summary;;;richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_tmdmovie/rte/],
+        	--div--;LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.flexMedia,poster, 	mediafile,
+        	--div--;LLL:EXT:tmd_movie/locallang_db.xml:tx_tmdmovie_movie.flexProduction,	genre, director, producer, actor,productionyear, country,
+			")
     ),
 
     "palettes" => array (

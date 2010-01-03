@@ -293,7 +293,7 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 				$out .= 	($this->getFieldContentMovie('runningtime'))	? $this->getFieldContentMovie('runningtime').' '.$LANG->getLL('time').'<br />' : '';
 				$out .= 	($this->getFieldContentMovie('rating')) 		? $this->getFieldContentMovie('rating').'<br />' : '';
 				$out .= 	($this->getFieldContentMovie('distributor')) 	? $this->getFieldContentMovie('distributor').'<br />' : '';
-				$out .= 	($this->getFieldContentMovie('3d'))				? $LANG->getLL("3D") : '';
+				$out .= 	($this->getFieldContentMovie('version3d'))		? $LANG->getLL("version3D") : '';
 				$out .= 	($this->getFieldContentMovie('genre'))			? '<hr />'.$this->getFieldContentMovie('genre') : '';
 				$out .= '</td>';
 				$out .= '<td width="320">'.t3lib_div::fixed_lgd_cs(strip_tags($this->getFieldContentMovie('summary')), 400).'</td>';
@@ -402,7 +402,7 @@ class  tx_tmdmovie_module1 extends t3lib_SCbase {
 				
 				return $out;
 			break;
-			case '3D':
+			case 'version3D':
 				return $this->row[$fN];
 			break;
 			case 'mediafile':

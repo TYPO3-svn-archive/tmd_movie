@@ -67,7 +67,7 @@ plugin.tx_tmdmovie_pi1.wrap {
 		DIRECTOR = |<br />
 		PRODUCER = |<br />
 		ACTOR = |<br />
-		3D = <span style="color: red;">3D</span><br />
+		VERSION3D = 3D Only<br />
 		}
 
 	singleView {
@@ -85,12 +85,12 @@ plugin.tx_tmdmovie_pi1.wrap {
 		SUMMARY_SHORT = |
 		SUMMARY_SHORT.stdWrap.crop = 300 | ... | 1
 		POSTER = |
-		FBW = |<br />
+		FBW = Prädikat&nbsp;|<br />
 		GENRE = Genre:&nbsp;|<br />
 		DIRECTOR = |<br />
 		PRODUCER = |<br />
-		ACTOR = |<br />
-		3D = <span style="color: red;">3D</span><br />
+		ACTOR = <br />Mit&nbsp;|<br />
+		VERSION3D = 3D only<br />
 		}
 
 	}

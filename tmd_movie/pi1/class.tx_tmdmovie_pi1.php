@@ -79,16 +79,13 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 
 		$lConf = $this->conf["listView."];	// Local settings for the listView function
 
-		if ($this->piVars["showUid"])
-			{	// If a single element should be displayed:
+		if ($this->piVars["showUid"]) {	// If a single element should be displayed:
 			$this->internal["currentTable"] = "tx_tmdmovie_movie";
 			$this->internal["currentRow"] = $this->pi_getRecord("tx_tmdmovie_movie",$this->piVars["showUid"]);
 
 			$content = $this->singleView($content,$conf);
 			return $content;
-			}
-		else
-			{
+		} else {
 			$items= $this->makeABC();
 
 			if (!isset($this->piVars["pointer"]))	$this->piVars["pointer"]=0;
@@ -108,8 +105,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 			$this->internal['pagefloat'] = $this->conf['listView.']['pagefloat'];
 			
 			
-			switch($this->piVars["abc"])
-				{
+			switch($this->piVars["abc"]) {
 				case 'latest':
 					$this->internal["orderBy"] = "crdate";
 					$orderBy = $this->internal["orderBy"]." DESC";
@@ -121,7 +117,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 				default:
 					$where  = " AND title LIKE '".$this->piVars["abc"]."%'";
 					$orderBy = $this->internal["orderBy"]." ".($this->internal["descFlag"] ? "ASC" : "DESC");
-				}
+			}
 
 			
 			
@@ -177,10 +173,9 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 		$this->pi_setPiVarDefaults();
 		$this->pi_loadLL();
 
-		if($this->ff['def']['mode'] == 'amazon')
-			{
+		if($this->ff['def']['mode'] == 'amazon') {
 			return $this->amazonAdwords();
-			}
+		}
 
 		return $this->substituteMarkers("###SINGLE_VIEW###");
 		}
@@ -191,12 +186,11 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 	/**
 	 * [Put your description here]
 	 */
-	function pi_list_row($c)
-		{
+	function pi_list_row($c) {
 		if ($editPanel)	$editPanel="<td>".$editPanel."</td>";
 
 		return $this->substituteMarkers("###LIST_VIEW_ROW###");
-		}
+	}
 
 
 
@@ -207,10 +201,9 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 		 * @param string Template string
 		 * @return string Template mit überschriebenen Markern
 		 */
-	function substituteMarkers($templ)
-		{
+	function substituteMarkers($templ) {
 		$out = $this->cObj->fileResource($this->conf['template']);
-#debug($out);
+
 		$out = $GLOBALS['TSFE']->cObj->getSubpart($out, $templ);
 
 		$out = $this->cObj->substituteMarker($out, '###TITLE###', 		$this->getFieldContent('title'));
@@ -231,7 +224,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 		$out = $this->cObj->substituteMarker($out, '###DIRECTOR###', 	$this->getFieldContent('director'));
 		$out = $this->cObj->substituteMarker($out, '###PRODUCER###', 	$this->getFieldContent('producer'));
 		$out = $this->cObj->substituteMarker($out, '###ACTOR###', 		$this->getFieldContent('actor'));
-		$out = $this->cObj->substituteMarker($out, '###VERSION_3D###', 	$this->getFieldContent('version3D'));
+		$out = $this->cObj->substituteMarker($out, '###VERSION3D###', 	$this->getFieldContent('version3D'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_1###',		$this->getFieldContent('movie_media-1'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_2###',		$this->getFieldContent('movie_media-2'));
 		$out = $this->cObj->substituteMarker($out, '###MEDIA_3###',		$this->getFieldContent('movie_media-3'));
@@ -258,7 +251,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 			$out = $this->cObj->substituteMarker($out, '###BACK###',	""); # marker �berschreiben
 
 		return $out;
-		}
+	}
 
 
 
@@ -266,19 +259,17 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 	/**
 	 * [Put your description here]
 	 */
-	function pi_list_header()
-		{
+	function pi_list_header() {
 		# sorting via TS
 		return $this->substituteMarkers("###LIST_VIEW_HEADER###");
-		}
+	}
 
 
 
 	/**
 	 * Inhalte aus der DB holen und neu Formatieren
 	 */
-	function getFieldContent($fN)
-		{
+	function getFieldContent($fN) { 
 		$type = 'listView.';
 		if($this->piVars['showUid'])
 			{
@@ -374,12 +365,11 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 						}
 			break;
 			case "version3D":
-				$out = $this->internal["currentRow"]["version3D"];
-				if($out)
-						{
-						$out = $this->cObj->wrap($out, $this->conf['wrap.'][$type]['3D']);
-						return $out;
-						}
+				$out = $this->internal["currentRow"]["3d"];
+				if($out) {
+					$out = $this->cObj->wrap('', $this->conf['wrap.'][$type]['VERSION3D']);
+					return $out;
+				}
 			break;
 			case "distributor":
 				$field = $this->internal["currentRow"]["distributor"];
@@ -519,6 +509,15 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 					return $out;
 					}
 			break;
+			case 'short':
+				$out = trim($this->internal["currentRow"]["short"]);
+
+				if($out) {
+					$out = $this->cObj->wrap($out, $this->conf['wrap.'][$type]['SHORT']);
+					return $out;
+				}
+			break;
+			
 			case "originaltitle":
 				$out = $this->internal["currentRow"]["originaltitle"];
 				if($out)
@@ -551,9 +550,32 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 					return $out;
 					}
 			break;
-
+			case 'actor':
+				$out = $this->internal["currentRow"]["actor"];
+				$out = strip_tags($out);
+				
+				$fullName = explode(",", $out);
+				
+				foreach($fullName as $val){
+					$parts= array();
+					$parts = explode(" ", $val);
+					foreach($parts as $namePart) {
+						$correctedName[] = ucfirst(strtolower($namePart));	
+					}
+					$names[] = implode(" ", $correctedName);
+					$correctedName = '';
+				}
+				$out = implode(", ", $names);
+				
+				if($out) {
+					return $this->cObj->wrap($out, $this->conf['wrap.'][$type]['ACTOR']);;
+				}
+			break;
+			case 'uid':
+				return $this->internal["currentRow"]["uid"];
+			break;
 			default:
-				return $this->internal["currentRow"][$fN];
+				return "neues Feld?->".$fN;
 			break;
 		}
 	}

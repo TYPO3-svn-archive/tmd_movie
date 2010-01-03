@@ -94,18 +94,12 @@ class tx_tmdmovie extends tslib_pibase {
 			}
 
 
-
+			
 		// case "screenformat" :
 			# 0 = BW 1= CS 2=N
-		switch($this->movie["screenformat"])
-			{
-			case 1: $this->screenformat = "Breitwand"; break;
-			case 2: $this->screenformat = "CinemaScope"; break;
-			case 3: $this->screenformat = "Normal"; break;
-			default: $this->screenformat = ""; break;
-			}
+		$this->screenformat = $this->movie["screenformat"];
 
-
+		
 
 		// case "length":
 	 	$this->length = $this->movie["runningtime"];
