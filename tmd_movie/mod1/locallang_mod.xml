@@ -13,7 +13,7 @@
 		<languageKey index="de" type="array">
 			<label index="mlang_tabs_tab">Film Übersicht</label>
 			<label index="mlang_labels_tabdescr">Gibt eine kompakte Übersicht über die Filme in der Datenbanl</label>
-			<label index="mlang_labels_tablabel">Informationen über die Filmdatenbank.</label>
+			<label index="mlang_labels_tablabel">Informationen über den Inhalt der Filmdatenbank.</label>
 		</languageKey>
 	</data>
 </T3locallang>

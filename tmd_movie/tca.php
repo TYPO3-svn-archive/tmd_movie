@@ -4,7 +4,7 @@ if (!defined ("TYPO3_MODE")) 	die ("Access denied.");
 $TCA["tx_tmdmovie_movie"] = Array (
 	"ctrl" => $TCA["tx_tmdmovie_movie"]["ctrl"],
 	"interface" => Array (
-		"showRecordFieldList" => "hidden,starttime,endtime,fe_group,artikel,title,short,screenformat,runningtime,rating,distributor,releasedate,web,sound,summary,poster,mediafile,fbw,genre,director,producer,actor,originaltitle,productionyear,country. "
+		"showRecordFieldList" => "hidden,starttime,endtime,fe_group,artikel,title,short,screenformat,runningtime,rating,distributor,releasedate,web,sound,summary,poster,mediafile,fbw,genre,director,producer,actor,originaltitle,productionyear,country"
 	),
 	"feInterface" => $TCA["tx_tmdmovie_movie"]["feInterface"],
 	"columns" => Array (
@@ -373,7 +373,7 @@ $TCA["tx_tmdmovie_movie"] = Array (
 /*                    "upper" => "2100", */
                     "lower" => "1885"
                 ),
-                "default" => strftime("%Y", time()-3*30*24*60*60)
+#                "default" => strftime("%Y", time()-3*30*24*60*60)
             )
         ),
         "country" => Array (        

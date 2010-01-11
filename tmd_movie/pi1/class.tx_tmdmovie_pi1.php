@@ -56,8 +56,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 				return $this->pi_wrapInBaseClass($this->singleView($content,$conf));
 			break;
 			default:
-				if (strstr($this->cObj->currentRecord,"tt_content"))
-					{
+				if (strstr($this->cObj->currentRecord,"tt_content")) {
 					$conf["pidList"] = $this->cObj->data["pages"];
 					$conf["recursive"] = $this->cObj->data["recursive"];
 					}
