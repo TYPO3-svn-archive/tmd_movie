@@ -35,6 +35,7 @@ class tx_tmdmovie extends tslib_pibase {
 	var $rating;
 	var $genre;
 	var $web;
+	var $youtube;
 	var $screenformat;
 	var $length;
 	var $distibutor;
@@ -94,6 +95,11 @@ class tx_tmdmovie extends tslib_pibase {
 			}
 
 
+		//		case "youtube":
+		if($this->movie["youtube"]) {
+			$this->youtube = $this->movie['youtube'];
+			}
+			
 			
 		// case "screenformat" :
 			# 0 = BW 1= CS 2=N
@@ -109,8 +115,6 @@ class tx_tmdmovie extends tslib_pibase {
 		//case "distributor":
 		$temp = $this->pi_getRecord("tt_address", $this->movie['distributor']);
 		$this->distibutor = $temp['company'];
-
-
 
 		// case "sound":
 		$sound = array("DolbySR","DolbyDIGITAL","DTS","SDDS","Mono","Stereo","DolbyDIGITAL-EX","DTS-EX");
@@ -201,6 +205,7 @@ class tx_tmdmovie extends tslib_pibase {
 					"ratingTooltip" => $this->ratingTooltip,
 					"genre" => $this->genre,
 					"web" => $this->web,
+					"youtube" => $this->youtube,
 					"screenformat" => $this->screenformat,
 				 	"dauer" => $this->length,
 					"distibutor" => $this->distibutor,

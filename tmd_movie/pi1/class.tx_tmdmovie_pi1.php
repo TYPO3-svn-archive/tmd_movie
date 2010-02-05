@@ -214,6 +214,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 		$out = $this->cObj->substituteMarker($out, '###DISTRIBUTOR###', $this->getFieldContent('distributor'));
 		$out = $this->cObj->substituteMarker($out, '###RELEASEDATE###', $this->getFieldContent('releasedate'));
 		$out = $this->cObj->substituteMarker($out, '###WEB###', 		$this->getFieldContent('web'));
+		$out = $this->cObj->substituteMarker($out, '###YOUTUBE###', 	$this->getFieldContent('youtube'));
 		$out = $this->cObj->substituteMarker($out, '###SOUND###', 		$this->getFieldContent('sound'));
 		$out = $this->cObj->substituteMarker($out, '###POSTER###',		$this->getFieldContent('poster'));
 		$out = $this->cObj->substituteMarker($out, '###GENRE###',		$this->getFieldContent('genre'));
@@ -243,6 +244,13 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 		$wrappedSubpartArray['###LINKITEM###'] = explode('|', $link);
 		$out = $this->cObj->substituteMarkerArrayCached($out, $markerArray, $subpartArray, $wrappedSubpartArray);
 
+		#Read more: http://dmitry-dulepov.com/article/why-substitutemarkerarraycached-is-bad.html#ixzz0dC2MuVq9
+/*
+		$template = $this->cObj->substituteMarkerArray($template, $markerArray);
+		foreach ($link as $subPart => $subContent) {
+		    $template = $this->cObj->substituteSubpart($template, $subPart, $subContent);
+		}
+*/
 			
 		if ($this->conf['CMD'] != "singleView")
 			$out = $this->cObj->substituteMarker($out, '###BACK###',	$this->pi_list_linkSingle($this->pi_getLL("back","Back"),0));
@@ -270,13 +278,11 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 	 */
 	function getFieldContent($fN) { 
 		$type = 'listView.';
-		if($this->piVars['showUid'])
-			{
+		if($this->piVars['showUid']) {
 			$type = 'singleView.';
-			}
+		}
 		
-		if(!$this->ratingCache)
-			{
+		if(!$this->ratingCache) {
 			$select = "uid,rating";
 			$table = "tx_tmdmovie_rating";
 			$where = "1";
@@ -284,14 +290,12 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 			$order = "";
 			$limit = "";
 			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery($select, $table, $where, $group, $order, $limit);
-			while($out = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))
+			while($out = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
 				$this->ratingCache[$out['uid']] = $out['rating'];
-
-			#debug($this->ratingCache);
 			}
+		}
 
-		if(!$this->genreCache)
-			{
+		if(!$this->genreCache) {
 			$select = "uid,genre";
 			$table = "tx_tmdmovie_genre";
 			$where = "1";
@@ -299,30 +303,41 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 			$order = "";
 			$limit = "";
 			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery($select, $table, $where, $group, $order, $limit);
-			while($out = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))
+			while($out = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
 				$this->genreCache[$out['uid']] = $out['genre'];
-
-			#debug($this->ratingCache);
 			}
+		}
 
 
-		switch($fN)
-			{
+		switch($fN) {
 			case "web":
 				# tslib_cObj.typoLink()
-				if($this->internal["currentRow"]["web"])
-					{
+				if($this->internal["currentRow"]["web"]) {
 					$out = $this->cObj->getTypoLink('Offizielle Website',
 													$this->internal["currentRow"]["web"],
 												 	'',
 													"_blank");
 
-					if($out)
-						{
+					if($out) {
 						$out = $this->cObj->wrap($out, $this->conf['wrap.'][$type]['WEB']);
 						return $out;
-						}
 					}
+				}
+				return $out;
+			break;
+			case "youtube":
+				# tslib_cObj.typoLink()
+				if($this->internal["currentRow"]["youtube"]) {
+					$out = $this->cObj->getTypoLink('Trailer auf YouTube',
+													$this->internal["currentRow"]["youtube"],
+												 	'',
+													"_blank");
+debug($out);
+					if($out) {
+						$out = $this->cObj->wrap($out, $this->conf['wrap.'][$type]['YOUTUBE']);
+						return $out;
+					}
+				}
 				return $out;
 			break;
 			case "screenformat" :
@@ -471,7 +486,7 @@ class tx_tmdmovie_pi1 extends tslib_pibase {
 					$pic = $pic[$nr];
 					}
 
-				$this->conf['media.']['file'] = 'uploads/tx_tmdmovie/'.$pic;
+				$this->conf['media.']['file'] = $this->uploadPath.$pic;
 				$out = $this->cObj->IMAGE($this->conf['media.']);
 
 				return $out;

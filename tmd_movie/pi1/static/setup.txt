@@ -57,6 +57,7 @@ plugin.tx_tmdmovie_pi1.wrap {
 		DISTRIBUTOR = |<br />
 		RELEASEDATE = |<br />
 		WEB = |<br />
+		YOUTUBE = |<br />
 		SOUND = |<br />
 		SUMMARY = |
 		SUMMARY_SHORT = |
@@ -80,6 +81,7 @@ plugin.tx_tmdmovie_pi1.wrap {
 		DISTRIBUTOR = Im Verleih von&nbsp;|<br />
 		RELEASEDATE = Kinostart:&nbsp;|<br />
 		WEB = |<br />
+		YOUTUBE = |<br />
 		SOUND = |<br />
 		SUMMARY = |
 		SUMMARY_SHORT = |

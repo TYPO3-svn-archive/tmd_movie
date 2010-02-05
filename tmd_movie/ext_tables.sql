@@ -22,6 +22,7 @@ CREATE TABLE tx_tmdmovie_movie (
     distributor int(11) DEFAULT '0' NOT NULL,
     releasedate int(11) DEFAULT '0' NOT NULL,
     web tinytext NOT NULL,
+    youtube tinytext NOT NULL,
     sound int(11) DEFAULT '0' NOT NULL,
     summary text NOT NULL,
     poster blob NOT NULL,

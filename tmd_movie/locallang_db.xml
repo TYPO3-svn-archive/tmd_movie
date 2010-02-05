@@ -55,6 +55,7 @@
 			<label index="tx_tmdmovie_genre">Movie: Genre</label>
 			<label index="tx_tmdmovie_genre.genre">genre</label>
 			<label index="tx_tmdmovie_movie.version3d">This movie is 3D ONLY</label>
+			<label index="tx_tmdmovie_movie.youtube">Trailer on youtube</label>
 			
 			<label index="tt_content.list_type_pi1">Cinema Movie</label>
 		</languageKey>
@@ -94,6 +95,7 @@
 			<label index="tx_tmdmovie_genre">Movie: Genre</label>
 			<label index="tx_tmdmovie_genre.genre">Genre</label>
 			<label index="tx_tmdmovie_movie.version3d">Diesen Film gibt es nur in einer 3D Version</label>
+			<label index="tx_tmdmovie_movie.youtube">Trailer auf youtube</label>
 
 			<label index="tx_tmdmovie_movie.flexTitle">Titel</label>
 			<label index="tx_tmdmovie_movie.flexInfo">Technik</label>
