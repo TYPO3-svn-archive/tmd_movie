@@ -6,8 +6,8 @@ plugin.tx_tmdmovie_pi1 {
 
 	strftime = %d.%m.%Y 
 		
-	fbw.0 = wertvoll
-	fbw.1 = besonders wertvoll
+	fbw.1 = wertvoll
+	fbw.2 = besonders wertvoll
 
 	artikel.0 = 
 	artikel.1 = Der
@@ -63,7 +63,8 @@ plugin.tx_tmdmovie_pi1.wrap {
 		SUMMARY_SHORT = |
 		SUMMARY_SHORT.stdWrap.crop = 300 | ... | 1
 		POSTER = |
-		FBW = |<br />
+		FBW.1 = |<br />
+		FBW.2 = |<br />
 		GENRE = |<br />
 		DIRECTOR = |<br />
 		PRODUCER = |<br />

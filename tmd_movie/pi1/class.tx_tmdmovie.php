@@ -136,12 +136,14 @@ class tx_tmdmovie extends tslib_pibase {
 
 
 		//case "fbw":
-		$field = $this->movie["fbw"];
+		$res = $this->movie["fbw"];
+		/*
 		for($i = 0; $i < 2; $i++)
 			if ($field & pow(2,$i))
 				$res .= $this->conf['fbw.'][$i]." ";
+		*/
 		$this->fbw = trim($res);
-
+		
 
 
 		//case "title":
